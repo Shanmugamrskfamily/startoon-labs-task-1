@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.form-input,
+.form-select {
+  outline: 1px solid black;
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: 2px solid #4f46e5;
+}

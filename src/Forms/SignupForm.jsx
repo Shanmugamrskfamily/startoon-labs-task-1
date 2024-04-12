@@ -1,10 +1,10 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import { css } from "@emotion/react";
 import { ClockLoader } from "react-spinners";
+import axios from 'axios';
 
 const override = css`
   display: block;
@@ -58,7 +58,7 @@ function SignupForm() {
 
     return (
         <div>
-            <h2 className="text-2xl mb-4">Sign Up</h2>
+            <h2 className="text-3xl text-center mb-4">Sign Up</h2>
             <Formik
                 initialValues={{ name: '', email: '', password: '', gender: '' }}
                 validationSchema={Yup.object({
@@ -75,23 +75,23 @@ function SignupForm() {
                 {({ isSubmitting }) => (
                     <Form>
                         <div className="mb-4">
-                            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-                            <Field type="text" id="name" name="name" className="form-input" />
+                            <label htmlFor="name" className="block text-sm font-medium mb-2 text-2xl text-gray-700">Name</label>
+                            <Field type="text" id="name" name="name" className="form-input w-full" />
                             <ErrorMessage name="name" component="div" className="text-red-600 text-sm mt-1" />
                         </div>
                         <div className="mb-4">
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-                            <Field type="email" id="email" name="email" className="form-input" />
+                            <label htmlFor="email" className="block text-sm font-medium mb-2 text-2xl text-gray-700">Email</label>
+                            <Field type="email" id="email" name="email" className="form-input w-full" />
                             <ErrorMessage name="email" component="div" className="text-red-600 text-sm mt-1" />
                         </div>
                         <div className="mb-4">
-                            <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
-                            <Field type="password" id="password" name="password" className="form-input" />
+                            <label htmlFor="password" className="block text-sm font-medium mb-2 text-2xl text-gray-700">Password</label>
+                            <Field type="password" id="password" name="password" className="form-input w-full" />
                             <ErrorMessage name="password" component="div" className="text-red-600 text-sm mt-1" />
                         </div>
                         <div className="mb-4">
-                            <label htmlFor="gender" className="block text-sm font-medium text-gray-700">Gender</label>
-                            <Field as="select" id="gender" name="gender" className="form-select">
+                            <label htmlFor="gender" className="block text-sm font-medium mb-2 text-2xl text-gray-700">Gender</label>
+                            <Field as="select" id="gender" name="gender" className="form-select w-full h-120">
                                 <option value="">Select Gender</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
@@ -99,17 +99,18 @@ function SignupForm() {
                             </Field>
                             <ErrorMessage name="gender" component="div" className="text-red-600 text-sm mt-1" />
                         </div>
-                        <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+                        <div className='text-center'>
+                        <button type="submit" className="btn btn-primary text-white" disabled={isSubmitting}>
                             {isSubmitting ? (
                                 <ClockLoader color="#ffffff" css={override} size={20} />
                             ) : (
                                 "Sign Up"
                             )}
                         </button>
+                        </div>
                     </Form>
                 )}
             </Formik>
-            <ToastContainer />
         </div>
     );
 }

@@ -11,3 +11,42 @@
 .form-select:focus {
   outline: 2px solid #4f46e5;
 }
+
+/* Table Styles */
+
+.border-collapse {
+  border-collapse: collapse;
+}
+
+/* Table Header Styles */
+.table-auto th {
+  text-align: center;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: bold;
+  color: whitesmoke;
+  background-color: #0b3382; /* Light Gray */
+  border: 1px solid #d1d5db; /* Gray */
+}
+
+/* Table Body Styles */
+.table-auto td {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db; /* Gray */
+}
+
+/* Hover Effect */
+.hover:bg-gray-100:hover {
+  background-color: #f3f4f6; /* Light Gray */
+}
+
+/* Cursor Pointer on Hover */
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
+}
+
+nav {
+  background-color: #0b3382;
+  font-weight: bold;
+  font-size: medium;
+}

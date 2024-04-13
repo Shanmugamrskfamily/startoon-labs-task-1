@@ -19,8 +19,9 @@ function LoginForm() {
             
             if (response.status === 200) {
 
-            // Save token in local storage
+            // Save in local storage
             localStorage.setItem('token', response.data.token);
+            localStorage.setItem('role',response.data.user.role);
 
             // Show success message
             toast.success('Login successful!', {

@@ -28,7 +28,7 @@ const UserProvider = ({ children }) => {
                 console.error('Error fetching user data:', error);
             });
         }
-    }, []);
+    },[]);
 
     return (
         <UserContext.Provider value={{ userName, userRole, userEmail }}>

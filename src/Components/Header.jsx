@@ -4,35 +4,38 @@ import { toast } from 'react-toastify';
 
 const Header = () => {
     const location = useLocation();
-    const navigate=useNavigate();
+    const navigate = useNavigate();
+    const userRole = localStorage.getItem('role');
 
-    const logout=()=>{
+    const isAdmin = userRole === 'Admin';
+
+    const logout = () => {
         localStorage.removeItem('token');
         localStorage.removeItem('role');
         toast.success('Logout Done!');
         navigate('/');
-    }
+    };
 
     return (
         <nav className="p-4 flex justify-between items-center">
             <div className="flex items-center space-x-4">
-                {location.pathname === '/' ? (
-                    <Link to="/" className="text-white hover:text-amber-400">
-                    Home
-                </Link>
-            ):null}                
-                {location.pathname === '/'? null : (
-                    <>
-                        <Link to="/dashboard" className="text-white hover:text-amber-400">
-                            Dashboard
-                        </Link>
-                        <Link to="/chart" className="text-white hover:text-amber-400">
-                            Chart
-                        </Link>
-                    </>
+                {location.pathname == '/' && (
+                    <Link to="/" className="text-black btn btn-active hover:bg-pink-400 hover:text-white">
+                        Home
+                    </Link>
+                )}
+                {location.pathname !== '/' && (
+                    <Link to="/dashboard" className="text-black btn btn-active hover:bg-pink-400 hover:text-white">
+                        Dashboard
+                    </Link>
+                )}
+                {isAdmin && location.pathname !== '/' && (
+                    <Link to="/chart" className="text-black btn btn-active hover:bg-pink-400 hover:text-white">
+                        Chart
+                    </Link>
                 )}
             </div>
-            {location.pathname === '/' ? null : (
+            {location.pathname !== '/' && (
                 <button
                     onClick={logout}
                     className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700"

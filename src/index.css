@@ -25,7 +25,7 @@
   text-align: left;
   font-weight: bold;
   color: whitesmoke;
-  background-color: #0b3382; /* Light Gray */
+  background-color: rgb(37 99 235);
   border: 1px solid #d1d5db; /* Gray */
 }
 
@@ -46,7 +46,7 @@
 }
 
 nav {
-  background-color: #0b3382;
+  background-color: rgb(37 99 235);
   font-weight: bold;
   font-size: medium;
 }

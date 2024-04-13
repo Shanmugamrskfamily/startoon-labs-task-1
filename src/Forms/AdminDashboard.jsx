@@ -1,6 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+function formatDate(dateString) {
+    const options = {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+    };
+
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-IN', options);
+}
+
 function AdminDashboard() {
     const [users, setUsers] = useState([]);
 
@@ -15,7 +29,8 @@ function AdminDashboard() {
                 });
                 const updatedUsers = response.data.users.map(user => ({
                     ...user,
-                    cumulativeCounts: user.loginCounts.reduce((total, login) => total + login.count, 0)
+                    cumulativeCounts: user.loginCounts.reduce((total, login) => total + login.count, 0),
+                    lastLogin: formatDate(user.lastLogin),
                 }));
                 setUsers(updatedUsers);
             } catch (error) {
@@ -55,7 +70,6 @@ function AdminDashboard() {
             </table>
         </div>
     );
-    
 }
 
 export default AdminDashboard;

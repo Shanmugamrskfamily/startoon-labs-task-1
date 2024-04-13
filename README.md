@@ -10,6 +10,24 @@ This is the web application for Star Toons, a platform for managing users, visua
 - **Chart Visualization**: Users activity is visualized in a chart for easy understanding.
 - **Responsive Design**: The application is designed to work well on both desktop and mobile devices.
 
+## CORS Configuration
+
+Cross-Origin Resource Sharing (CORS) is configured to allow requests from authorized origins. CORS headers are set to allow requests from the frontend deployed on Netlify.
+
+```javascript
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: "https://startoons-web-app.netlify.app",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    credentials: true, // Allow cookies to be sent and received cross-domain
+  }),
+);
+```
+
+Make sure to replace 'https://startoons-web-app.netlify.app' with the actual URL of your frontend application.
+
 ## Demo
 
 You can view a live demo of the application [here](https://startoons-web-app.netlify.app/).

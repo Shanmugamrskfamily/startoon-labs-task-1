@@ -14,6 +14,8 @@ This is the web application for Star Toons, a platform for managing users, visua
 
 You can view a live demo of the application [here](https://startoons-web-app.netlify.app/).
 
+<img src='./public/images/screenshot.png'/>
+
 ## Backend
 
 The backend of this application is built with Node.js and MongoDB. You can find the repository for the backend [here](link-to-backend-repository).

@@ -14,7 +14,7 @@ This is the web application for Star Toons, a platform for managing users, visua
 
 You can view a live demo of the application [here](https://startoons-web-app.netlify.app/).
 
-<img src='./public/images/screenshot.png'/>
+<img src='./public/images/screenshot_2.png'/>
 
 ## Backend
 

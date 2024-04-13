@@ -14,7 +14,7 @@ function LoginForm() {
         setIsLoggingIn(true);
         try {
             // Send login data to the backend API
-            const response = await axios.post('http://localhost:5000/auth/login', values);
+            const response = await axios.post('https://startoon-labs-web-be.onrender.com/auth/login', values);
 
             
             if (response.status === 200) {
@@ -81,13 +81,22 @@ function LoginForm() {
                             <ErrorMessage name="password" component="div" className="text-red-600 text-sm mt-1" />
                         </div>
                         <div className='text-center'>
-                        <button type="submit" className="btn btn-success text-white" disabled={isSubmitting || isLoggingIn}>
-                            {isLoggingIn ? (
+                            <p className="text-sm mb-4">
+                                Demo Admin Credentials <br />
+                                Admin Email: <span className="font-bold text-green-600">admin@email.com</span> <br />
+                                Admin Password: <span className="font-bold text-green-600">Admin@123</span>
+                            </p>
+                            <button
+                                type="submit"
+                                className="btn btn-success text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                                disabled={isSubmitting || isLoggingIn}
+                                >
+                                {isLoggingIn ? (
                                 <ClockLoader color="#ffffff" size={20} />
-                            ) : (
-                                'Login'
-                            )}
-                        </button>
+                                    ) : (
+                                        'Login'
+                                )}
+                            </button>
                         </div>
                     </Form>
                 )}

@@ -15,7 +15,7 @@ const UserProvider = ({ children }) => {
         const fetchLoginActivity = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get('http://localhost:5000/admin/get-login-activity', {
+                const response = await axios.get('https://startoon-labs-web-be.onrender.com/admin/get-login-activity', {
                     headers: {
                         'x-auth-token': token
                     }

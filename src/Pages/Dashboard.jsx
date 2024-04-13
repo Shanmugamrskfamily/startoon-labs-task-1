@@ -20,7 +20,7 @@ function Dashboard() {
                     return;
                 }
                 console.log('token',token);
-                const response = await axios.get('http://localhost:5000/user/get-user', {
+                const response = await axios.get('https://startoon-labs-web-be.onrender.com/user/get-user', {
                     headers: {
                         'x-auth-token': token
                     }

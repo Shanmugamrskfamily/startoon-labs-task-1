@@ -17,7 +17,7 @@ function SignupForm() {
     const handleSubmit = async (values, { setSubmitting,resetForm }) => {
         try {
             // Send data to the backend API
-            const response = await axios.post('http://localhost:5000/auth/signup', values);
+            const response = await axios.post('https://startoon-labs-web-be.onrender.com/auth/signup', values);
     
             // Show success message if request is successful
             if (response.status === 201) {

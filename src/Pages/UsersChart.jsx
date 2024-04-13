@@ -49,7 +49,7 @@ function UsersChart() {
                 });
 
                 // Fetch total users and cumulative total login counts
-                const statsResponse = await axios.get('http://localhost:5000/admin/get-user-stats', {
+                const statsResponse = await axios.get('https://startoon-labs-web-be.onrender.com/admin/get-user-stats', {
                     headers: {
                         'x-auth-token': token
                     }

@@ -19,7 +19,7 @@ function UserDashboard() {
 
         if (token) {
             // Fetch user information using the token
-            axios.get('http://localhost:5000/user/get-user', {
+            axios.get('https://startoon-labs-web-be.onrender.com/user/get-user', {
                 headers: {
                     'x-auth-token': token
                 }

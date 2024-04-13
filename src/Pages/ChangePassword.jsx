@@ -19,7 +19,7 @@ const ChangePassword = () => {
 
       const token = localStorage.getItem('token');
       const response = await axios.put(
-        'http://localhost:5000/auth/change-password',
+        'https://startoon-labs-web-be.onrender.com/auth/change-password',
         values,
         {
           headers: {

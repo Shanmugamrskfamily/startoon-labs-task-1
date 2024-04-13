@@ -19,14 +19,12 @@ function Dashboard() {
                     navigate('/');
                     return;
                 }
-                console.log('token',token);
+                
                 const response = await axios.get('https://startoon-labs-web-be.onrender.com/user/get-user', {
                     headers: {
                         'x-auth-token': token
                     }
                 });
-
-                console.log('Response',response);
 
                 if (response.status >= 400) {
                     // If error status returned, log out user and redirect to login page

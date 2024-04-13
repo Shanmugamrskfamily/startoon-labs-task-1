@@ -10,7 +10,7 @@ function UsersChart() {
         const fetchData = async () => {
             const token = localStorage.getItem('token');
             try {
-                const response = await axios.get('http://localhost:5000/admin/get-login-activity', {
+                const response = await axios.get('https://startoon-labs-web-be.onrender.com/admin/get-login-activity', {
                     headers: {
                         'x-auth-token': token
                     }

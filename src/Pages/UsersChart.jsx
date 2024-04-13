@@ -27,7 +27,7 @@ function UsersChart() {
                         datasets: [{
                             label: 'Counts',
                             data: counts,
-                            backgroundColor: 'rgb(37 99 235)'
+                            backgroundColor: 'rgb(27, 74, 202)'
                         }]
                     },
                     options: {

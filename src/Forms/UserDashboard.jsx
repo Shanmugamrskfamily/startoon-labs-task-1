@@ -25,6 +25,10 @@ function UserDashboard() {
                 }
             })
             .then(response => {
+                if(response.status===401){
+                    toast.warning('Your Not Authoraized!');
+                    navigate('/');
+                }
                 const { userName, email } = response.data;
                 setUserName(userName);
                 setUserEmail(email);

@@ -17,7 +17,7 @@ const Header = () => {
     };
 
     return (
-        <nav className="p-4 flex justify-between items-center">
+        <nav className="p-4 flex justify-between items-center mb-8">
             <div className="flex items-center space-x-4">
                 {location.pathname == '/' && (
                     <Link to="/" className="text-black btn btn-active hover:bg-pink-400 hover:text-white">
